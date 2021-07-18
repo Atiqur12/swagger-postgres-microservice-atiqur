@@ -1,0 +1,518 @@
+
+
+<link rel="stylesheet" href="css/font-awesome.css">
+<style>
+    input,button,a
+{
+    padding:10px;
+    border:0;
+    text-decoration: none;
+    outline:0;
+}
+
+body
+{
+    margin:0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header{
+    background-color:orange;
+    padding: 10px;   
+    display: flex;
+    color:white;
+    justify-content: space-between;
+}
+nav
+{
+    position: sticky;
+    top:0;
+    background-color: black;
+    color:white;
+    display: flex;
+    justify-content: space-around;
+    padding:10px;
+}
+
+nav a{
+    color:white;
+}
+nav div:last-child a{
+    padding:10px 40px;
+    background-color: tomato;
+}
+
+.about
+{
+    padding:5%;
+    background-color: #f3f3f3;
+}
+
+.about button
+{
+    background-color: black;
+    color:white;
+}
+.contact
+{
+    padding:5%;
+    background-color: black;
+    color:white;
+}
+.contact button
+{
+    background-color: tomato;
+    color:white;
+}
+
+.team
+{
+    background-color: grey;
+    padding:5%;
+    text-align: center;
+}
+.team .flex
+{
+    display: flex;
+}
+.team .flex .item
+{
+    width:21%;
+    padding:1%;
+    margin:1%;
+    background-color: white;
+    box-shadow: 0 10px 10px black;
+}
+.team .flex .item .image
+{
+    padding:25%;
+    background-color: black;
+    color:white;
+}
+.team .flex .item button
+{
+    background-color: black;
+    color:white;
+    width:100%;
+}
+
+
+.services
+{
+    padding:5%;
+    background-color:#333;
+    text-align: center;
+    color:white;
+}
+
+.services .flex
+{
+    display: flex;
+    flex-flow: wrap;
+}
+.services .flex .item
+{
+    width:21%;
+    padding:1%;
+    margin:1%;
+    background-color: white;
+    color:black;
+    border-radius: 20px;
+}
+.services .flex .item button
+{
+    background-color: black;
+    color:white;
+    border-radius: 100px;
+    padding:10px 40px;
+}
+
+.newsletter
+{
+    padding:5%;
+    background-color: black;
+    color:white;
+}
+
+.newsletter button
+{
+    background-color: tomato;
+    color:white;
+}
+
+.skills
+{
+    padding:5%;
+    background-color: #333;
+    color:white;
+}
+
+.skills h3{
+    font-weight: normal;
+    letter-spacing: 10px;
+}
+.skills .white
+{
+    background-color: white;
+    line-height: 30px;
+}
+.skills .white .black
+{
+    background-color: black;
+    color:white;
+    text-align: center;
+}
+
+.price
+{
+    padding:5%;
+    text-align: center;
+    background-color: grey;
+}
+.price .flex{
+    display: flex;
+}
+.price .flex .item{
+    width:30.3%;
+    margin:1.5%;
+    background-color: white;
+    box-shadow: 0 10px 10px black;
+}
+.price .flex .item .h{
+    background-color: black;
+    padding:5%;
+    color:white;
+    font-size: 200%;
+}
+.price .flex .item .b{
+    padding:1%;
+    background-color:white;
+    line-height: 40px;
+}
+.price .flex .item .b big{
+    font-weight: bold;
+    font-size: 200%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.price .flex .item .f{
+    padding:5%;
+    background-color: silver;
+}
+.price .flex .item .f button{
+    background-color: black;
+    color:white;
+}
+
+footer
+{
+    padding:10px;
+    background-color: black;
+    color:white;
+    text-align: center;
+}
+
+
+@media (max-width:786px)
+{
+    nav
+    {
+        flex-flow: column;
+        padding:20px;
+        text-align: center;
+    }
+    nav div a
+    {
+        /* display: block; */
+    }
+    nav div
+    {
+        padding:20px;
+        align-self: center;
+    }
+    .contact input
+    {
+        width:100%;
+        margin:auto;
+        padding:auto;
+        margin-bottom: 10px;
+    }
+    .price  .flex,
+    .services  .flex,
+    .team  .flex{
+        flex-flow: column;
+    }
+    .price  .flex .item,
+    .services  .flex .item,
+    .team  .flex .item{
+        width:auto;
+    }
+}
+</style>
+<header>
+    <div>
+        phone: <i class="fa fa-phone"></i>
+    </div>
+    <div>
+        email: <i class="fa fa-envelope"></i>
+    </div>
+</header>
+<nav>
+    <div>
+        <h1>Atiqur Rehman</h1>
+    </div>
+    <div>
+        <a href="">home</a>
+        <a href="">contact</a>
+        <a href="">about</a>
+        <a href="">services</a>
+        <a href="">newsletter</a>
+        <a href="">skills</a>
+        <a href="">price</a>
+    </div>
+    <div>
+        <a href="">Register</a>
+    </div>
+</nav>
+<section class="about">
+    <h1>About Us</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, accusamus autem nisi dolorem molestiae
+        corporis hic animi, saepe doloribus est asperiores mollitia explicabo voluptates sapiente placeat eligendi rem!
+        Unde, ab.
+    </p>
+    <button>Read More</button>
+</section>
+<section class="contact ">
+    <h1>Contact Us</h1>
+    <p>
+        our experts would contact you soon
+    </p>
+    <input placeholder="Name">
+    <input placeholder="Email">
+    <input placeholder="Phone">
+    <input placeholder="Message">
+    <button><i class="fa fa-send"></i> Send Message</button>
+</section>
+<section class="team">
+    <h1>Meet The Team</h1>
+    <p>we are having corporate exposure of over 20+ years</p>
+    <div class="flex">
+        <div class="item">
+            <div class="image">100X100</div>
+            <h3>Employee</h3>
+            <h4>Designer</h4>
+            <h5>HTML5</h5>
+            <button><i class="fa fa-envelope"></i> hire now</button>
+        </div>
+
+        <div class="item">
+            <div class="image">100X100</div>
+            <h3>Employee</h3>
+            <h4>Designer</h4>
+            <h5>HTML5</h5>
+            <button><i class="fa fa-envelope"></i> hire now</button>
+        </div>
+        <div class="item">
+            <div class="image">100X100</div>
+            <h3>Employee</h3>
+            <h4>Designer</h4>
+            <h5>HTML5</h5>
+            <button><i class="fa fa-envelope"></i> hire now</button>
+        </div>
+        <div class="item">
+            <div class="image">100X100</div>
+            <h3>Employee</h3>
+            <h4>Designer</h4>
+            <h5>HTML5</h5>
+            <button><i class="fa fa-envelope"></i> hire now</button>
+        </div>
+
+
+    </div>
+</section>
+<section class="services">
+    <h1>Our Services</h1>
+    <p>we provide all kind of it related services</p>
+    <div class="flex">
+        <div class="item">
+            <i class="fa fa-home fa-5x"></i>
+            <h3>service1</h3>
+            <p>description</p>
+            <button><i class="fa fa-eye"></i> Quick View</button>
+        </div>
+
+        <div class="item">
+            <i class="fa fa-eye fa-5x"></i>
+            <h3>service1</h3>
+            <p>description</p>
+            <button><i class="fa fa-eye"></i> Quick View</button>
+        </div>
+        <div class="item">
+            <i class="fa fa-photo fa-5x"></i>
+            <h3>service1</h3>
+            <p>description</p>
+            <button><i class="fa fa-eye"></i> Quick View</button>
+        </div>
+        <div class="item">
+            <i class="fa fa-pencil fa-5x"></i>
+            <h3>service1</h3>
+            <p>description</p>
+            <button><i class="fa fa-eye"></i> Quick View</button>
+        </div>
+        <div class="item">
+            <i class="fa fa-facebook fa-5x"></i>
+            <h3>service1</h3>
+            <p>description</p>
+            <button><i class="fa fa-eye"></i> Quick View</button>
+        </div>
+        <div class="item">
+            <i class="fa fa-twitter fa-5x"></i>
+            <h3>service1</h3>
+            <p>description</p>
+            <button><i class="fa fa-eye"></i> Quick View</button>
+        </div>
+        <div class="item">
+            <i class="fa fa-instagram fa-5x"></i>
+            <h3>service1</h3>
+            <p>description</p>
+            <button><i class="fa fa-eye"></i> Quick View</button>
+        </div>
+        <div class="item">
+            <i class="fa fa-linkedin fa-5x"></i>
+            <h3>service1</h3>
+            <p>description</p>
+            <button><i class="fa fa-eye"></i> Quick View</button>
+        </div>
+        <div class="item">
+            <i class="fa fa-pinterest fa-5x"></i>
+            <h3>service1</h3>
+            <p>description</p>
+            <button><i class="fa fa-eye"></i> Quick View</button>
+        </div>
+        <div class="item">
+            <i class="fa fa-bell fa-5x"></i>
+            <h3>service1</h3>
+            <p>description</p>
+            <button><i class="fa fa-eye"></i> Quick View</button>
+        </div>
+        <div class="item">
+            <i class="fa fa-html5 fa-5x"></i>
+            <h3>service1</h3>
+            <p>description</p>
+            <button><i class="fa fa-eye"></i> Quick View</button>
+        </div>
+        <div class="item">
+            <i class="fa fa-css3 fa-5x"></i>
+            <h3>service1</h3>
+            <p>description</p>
+            <button><i class="fa fa-eye"></i> Quick View</button>
+        </div>
+
+    </div>
+</section>
+<section class="newsletter">
+    <h1>Newsletter</h1>
+    <p>subscribe to our monthly newsletter or get in touch with our whatsapp to get recent updates on technology
+        collabration and walkin drives</p>
+    <input placeholder="Your Email Address">
+    <button><i class="fa fa-bell"></i> subscribe</button>
+</section>
+<section class="skills">
+    <h1>Our Technology</h1>
+
+    <h3>HTML5</h3>
+    <div class="white">
+        <div class="black" style="width:90%">90%</div>
+    </div>
+    <h3>CSS3</h3>
+    <div class="white">
+        <div class="black" style="width:80%">80%</div>
+    </div>
+    <h3>JAVASCRIPT</h3>
+    <div class="white">
+        <div class="black" style="width:85%">85%</div>
+    </div>
+    <h3>NODE JS</h3>
+    <div class="white">
+        <div class="black" style="width:70%">70%</div>
+    </div>
+    <h3>EXPRESS JS</h3>
+    <div class="white">
+        <div class="black" style="width:55%">55%</div>
+    </div>
+    <h3>JAVA</h3>
+    <div class="white">
+        <div class="black" style="width:100%">100%</div>
+    </div>
+    <h3>PYHTON</h3>
+    <div class="white">
+        <div class="black" style="width:90%">90%</div>
+    </div>
+    <h3>DJANGO</h3>
+    <div class="white">
+        <div class="black" style="width:80%">80%</div>
+    </div>
+    <h3>FLASK</h3>
+    <div class="white">
+        <div class="black" style="width:75%">75%</div>
+    </div>
+    <h3>MACHINE LEARNING</h3>
+    <div class="white">
+        <div class="black" style="width:100%">100%</div>
+    </div>
+
+</section>
+<section class="price">
+    <h1>Pricing Plans</h1>
+    <p>we offer best in market reasonable pricing </p>
+    <div class="flex">
+        <div class="item">
+            <div class="h">BASIC</div>
+            <div class="b">
+                <p>unlimited seats</p>
+                <p>unlimited learning material</p>
+                <p>unlimited video acceess</p>
+                <p>KT sessions</p>
+                <p>Doubts Sessions</p>
+                <p>Collabrative environment</p>
+                <big>JULY/month</big>
+            </div>
+            <div class="f">
+                <button>get offer</button>
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="h">PRO</div>
+            <div class="b">
+                <p>unlimited seats</p>
+                <p>unlimited learning material</p>
+                <p>unlimited video acceess</p>
+                <p>KT sessions</p>
+                <p>Doubts Sessions</p>
+                <p>Collabrative environment</p>
+                <big>JULY/month</big>
+            </div>
+            <div class="f">
+                <button>get offer</button>
+            </div>
+        </div>
+        <div class="item">
+            <div class="h">PREMIUM</div>
+            <div class="b">
+                <p>unlimited seats</p>
+                <p>unlimited learning material</p>
+                <p>unlimited video acceess</p>
+                <p>KT sessions</p>
+                <p>Doubts Sessions</p>
+                <p>Collabrative environment</p>
+                <big>JULY/month</big>
+            </div>
+            <div class="f">
+                <button>get offer</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+<footer>crafted for demo purpose</footer>
