@@ -1,7 +1,8 @@
 const express = require("express")
 const router = express.Router()
-const db = require("../database");
-const Customer = db.Customer;
+const db = require("../database/customer");
+const Customer = db.customer;
+const Op = db.Sequelize.Op;
 
 /**
  * @swagger

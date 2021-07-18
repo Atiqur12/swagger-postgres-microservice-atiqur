@@ -1,28 +1,29 @@
 const express = require("express")
 const router = express.Router()
-const db = require("../database");
-const Notification = db.Notification;
+const db = require("../database/notification");
+const Notification = db.notification;
+const Op = db.Sequelize.Op;
 
 /**
  * @swagger
  * /:
  *   get:
- *     summary: get all notification by token
+ *     summary: get all Notification by token
  *     description: you need to provide token for this api to work
 */
 /**
  * @swagger
  * /:
  *   post:
- *     summary: create a new notification sending name,email,phone,password
+ *     summary: create a new Notification sending name,email,phone,password
  *     description: after success you will creating new adin
 */
 /**
  * @swagger
  * /:
  *   patch:
- *     summary: udpate notification by id here
- *     description: any notification attributes like name,email,phone,password
+ *     summary: udpate Notification by id here
+ *     description: any Notification attributes like name,email,phone,password
 */
 /**
  * @swagger

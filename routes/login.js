@@ -1,8 +1,12 @@
 const express = require("express")
 const router = express.Router()
 const services = require("../services")
-const db = require("../database");
-const Customer = db.Customer;
+
+const db = require("../database/customer");
+const Customer = db.customer;
+const Op = db.Sequelize.Op;
+
+
 /**
  * @swagger
  * /:
@@ -21,20 +25,14 @@ router.post("/", (req, res, next) => {
             .catch(e => res.status(404).json({ status: false, data: [], message: "failed to login as admin", error: e }))
     }
     else {
-        Customer.find({ email, password })
+        Customer.findAll({ where: { email, password } })
+            .then(d => d[0])
             .then(foundUser => {
-                user = foundUser
-                if (user.password == password && user.email == email) {
-
-                }
+                services.sign(foundUser.id, "customer")
+                    .then(d => res.status(200).json({ status: true, data: d, message: "loggedin as admin kindly save this token for accesssing customer pages" }))
+                    .catch(e => res.status(404).json({ status: false, data: e, message: "failed to login as customer", error: e }))
             })
-            .then((res) => createToken())
-            .then(token => updateUserToken(token, user))
-            .then(() => {
-                delete user.password_digest
-                response.status(200).json(user)
-            })
-            .catch((err) => console.error(err))
+            .catch((err) => res.status(404).json({ status: false, message: "failed to login as customer", error: err }))
     }
 })
 

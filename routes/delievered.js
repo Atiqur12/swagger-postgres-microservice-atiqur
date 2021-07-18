@@ -1,7 +1,9 @@
 const express = require("express")
 const router = express.Router()
-const db = require("../database");
-const Delivered = db.Delivered;
+const db = require("../database/delivered");
+const Delievered = db.delievered;
+
+const Op = db.Sequelize.Op;
 
 /**
  * @swagger
@@ -34,19 +36,19 @@ const Delivered = db.Delivered;
 
 
 router.get("/", (req, res, next) => {
-    Delivered.findAll({ })
+    Delievered.findAll({ })
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving Delivereds."
+          err.message || "Some error occurred while retrieving Delievereds."
       });
     });
 })
 router.post("/", (req, res, next) => {
-    Delivered.create(req.body)
+    Delievered.create(req.body)
         .then(data => {
             res.json(data);
         })
@@ -59,45 +61,45 @@ router.post("/", (req, res, next) => {
 })
 router.patch("/:id", (req, res, next) => {
     const id = req.params.id;
-    Delivered.update(req.body, {
+    Delievered.update(req.body, {
         where: { id: id }
     })
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Delivered was updated successfully."
+                    message: "Delievered was updated successfully."
                 });
             } else {
                 res.send({
-                    message: `Cannot update Delivered with id=${id}. Maybe Delivered was not found or req.body is empty!`
+                    message: `Cannot update Delievered with id=${id}. Maybe Delievered was not found or req.body is empty!`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error updating Delivered with id=" + id
+                message: "Error updating Delievered with id=" + id
             });
         });
 })
 router.delete("/:id", (req, res, next) => {
     const id = req.params.id;
-    Delivered.destroy({
+    Delievered.destroy({
         where: { id: id }
       })
         .then(num => {
           if (num == 1) {
             res.send({
-              message: "Delivered was deleted successfully!"
+              message: "Delievered was deleted successfully!"
             });
           } else {
             res.send({
-              message: `Cannot delete Delivered with id=${id}. Maybe Delivered was not found!`
+              message: `Cannot delete Delievered with id=${id}. Maybe Delievered was not found!`
             });
           }
         })
         .catch(err => {
           res.status(500).send({
-            message: "Could not delete Delivered with id=" + id
+            message: "Could not delete Delievered with id=" + id
           });
         });
 })

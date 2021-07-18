@@ -1,28 +1,29 @@
 const express = require("express")
 const router = express.Router()
-const db = require("../database");
-const Ordered = db.Ordered;
+const db = require("../database/ordered");
+const Ordered = db.ordered;
+const Op = db.Sequelize.Op;
 
 /**
  * @swagger
  * /:
  *   get:
- *     summary: get all ordered by token
+ *     summary: get all Ordered by token
  *     description: you need to provide token for this api to work
 */
 /**
  * @swagger
  * /:
  *   post:
- *     summary: create a new ordered sending name,email,phone,password
+ *     summary: create a new Ordered sending name,email,phone,password
  *     description: after success you will creating new adin
 */
 /**
  * @swagger
  * /:
  *   patch:
- *     summary: udpate ordered by id here
- *     description: any ordered attributes like name,email,phone,password
+ *     summary: udpate Ordered by id here
+ *     description: any Ordered attributes like name,email,phone,password
 */
 /**
  * @swagger

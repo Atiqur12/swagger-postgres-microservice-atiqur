@@ -1,7 +1,11 @@
 const express = require("express")
 const router = express.Router()
-const db = require("../database");
-const Admin = db.Admin;
+
+const db = require("../database/admin");
+const admin = db.admin;
+const Op = db.Sequelize.Op;
+
+
 
 /**
  * @swagger
@@ -36,7 +40,7 @@ const Admin = db.Admin;
 
 
 router.get("/", (req, res, next) => {
-    Admin.findAll({ })
+    admin.findAll({ })
     .then(data => {
       res.send(data);
     })
@@ -48,7 +52,7 @@ router.get("/", (req, res, next) => {
     });
 })
 router.post("/", (req, res, next) => {
-    Admin.create(req.body)
+    admin.create(req.body)
         .then(data => {
             res.json(data);
         })
@@ -61,7 +65,7 @@ router.post("/", (req, res, next) => {
 })
 router.patch("/:id", (req, res, next) => {
     const id = req.params.id;
-    Admin.update(req.body, {
+    admin.update(req.body, {
         where: { id: id }
     })
         .then(num => {
