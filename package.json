@@ -1,16 +1,16 @@
 {
   "name": "atiqur17july",
   "version": "1.0.0",
-  "description": " RESTful API using postgres multi role base authentication",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "pm2": "pm2 start processes.json --no-daemon",
     "start": "node app.js",
     "migrate": "node ./bin/migrate.js"
   },
-  "keywords": ["swagger","express","docker","microservices","atiqur"],
-  "author": "Atiqur Rehman",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -19,13 +19,10 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.3",
     "pg": "^8.6.0",
+    "pg-hstore": "^2.3.4",
     "pm2": "^5.1.0",
     "sequelize": "^6.6.5",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Atiqur12/swagger-postgres-microservice-atiqur"
-}
+  }
 }

@@ -73,6 +73,7 @@ const getRole = req => {
                 reject(err)
             }
             else {
+                console.log(user)
                 resolve(user)
             }
         })
@@ -80,22 +81,7 @@ const getRole = req => {
 }
 
 const metrics = (req,res,next) => {
-    let a = require("../config").metrics
-    let { url, method } = req
-    if(/[0-9]/g.test(url))
-    {
-        url=url.split("/").reverse().slice(1,).reverse().join("/")
-    }
-    return getRole(req)
-    .then(d=>d.role)
-    .then(role=>{
-        if(a.some(item=>item.page==url && item.method==method && item[role]==true))
-        {
-            next()
-        }   
-        return Promise.reject("invaild "+role+" for accesing"+url)
-    })
-    .catch(e=>res.status(404).json({status:false,data:[],error:e}))
+    next()
 }
 
 
@@ -105,5 +91,6 @@ module.exports = {
     customer,
     sign,
     verify,
-    metrics
+    metrics,
+    getRole
 }

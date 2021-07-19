@@ -1,13 +1,8 @@
-let url1 = "admin/1"
-let url2 = "admin/222/2"
+const db = require("./database/customer");
+db.sequelize.sync();
+// const Customer = db.customer;
+const Op = db.Sequelize.Op;
 
-
-function abc(url) {
-    if (/[0-9]/g.test(url)) {
-        url = url.split("/").reverse().slice(1,).reverse().join("/")
-    }
-    console.log(url)
-}
-
-abc(url1)
-abc(url2)
+db.customers.findAll({})
+.then(d=>console.log(d))
+.catch(d=>console.log("proelm"))

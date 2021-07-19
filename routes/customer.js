@@ -1,6 +1,10 @@
 const express = require("express")
 const router = express.Router()
+
 const db = require("../database/customer");
+db.sequelize.sync({ force: true }).then(() => {
+  console.log("Drop and re-sync db.");
+});
 const Customer = db.customer;
 const Op = db.Sequelize.Op;
 
@@ -34,7 +38,7 @@ const Op = db.Sequelize.Op;
 */
 
 
-router.get("/", (req, res, next) => {
+router.get("/", (req, res) => {
     Customer.findAll({ })
     .then(data => {
       res.send(data);
@@ -46,7 +50,8 @@ router.get("/", (req, res, next) => {
       });
     });
 })
-router.post("/", (req, res, next) => {
+router.post("/", (req, res) => {
+  console.log("customer create",req.body)
     Customer.create(req.body)
         .then(data => {
             res.json(data);
@@ -58,7 +63,7 @@ router.post("/", (req, res, next) => {
             });
         });
 })
-router.patch("/:id", (req, res, next) => {
+router.patch("/:id", (req, res) => {
     const id = req.params.id;
     Customer.update(req.body, {
         where: { id: id }
@@ -80,7 +85,7 @@ router.patch("/:id", (req, res, next) => {
             });
         });
 })
-router.delete("/:id", (req, res, next) => {
+router.delete("/:id", (req, res) => {
     const id = req.params.id;
     Customer.destroy({
         where: { id: id }
